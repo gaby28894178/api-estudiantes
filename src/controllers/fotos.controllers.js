@@ -16,7 +16,12 @@ const getOne = catchError(async (req, res) => {
 
 // POST
 const create = catchError(async (req, res) => {
+    console.log(req.body)
+    console.log(res.body)
     const result = await Fotos.create(req.body);
+
+
+
     return res.status(201).json(result);
 });
 

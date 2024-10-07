@@ -17,19 +17,19 @@ const Terror = sequelize.define('Terror', {
     },
     urlimagen1: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
     },
     urlimagen2: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
     },
     urlimagen3: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
     },
     urlvideo: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
     },
 });
 

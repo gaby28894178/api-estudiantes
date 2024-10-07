@@ -8,7 +8,7 @@ const Producto = sequelize.define('producto', {
     },
     descripcion: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     precio: {
         type: DataTypes.DECIMAL(10, 2),
@@ -20,7 +20,7 @@ const Producto = sequelize.define('producto', {
     },
     urlImagen: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     categoria: {
         type: DataTypes.STRING,

@@ -20,7 +20,7 @@ const Almacen = sequelize.define('almacen', {
     },
     urlImagen: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     categoria: {
         type: DataTypes.STRING,

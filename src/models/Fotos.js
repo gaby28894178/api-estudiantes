@@ -8,7 +8,7 @@ const Foto = sequelize.define('foto', {
     },
     descripcion: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
    
     artista: {
@@ -17,7 +17,7 @@ const Foto = sequelize.define('foto', {
     },
     urlImagen: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     categoria: {
         type: DataTypes.STRING,

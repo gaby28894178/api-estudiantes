@@ -24,14 +24,20 @@ const create = catchError(async (req, res) => {
 const update = catchError(async (req, res) => {
     const { id } = req.params;
     const result = await Almacen.update(req.body, { where: { id }, returning: true });
-    return result[0] === 0 ? res.sendStatus(404) : res.json(result[1][0]);
+    
+    return result[0] === 0 ? res.sendStatus(404) : res.status(204).json(result[1][0]);
 });
 
 // DELETE
 const destroy = catchError(async (req, res) => {
     const { id } = req.params;
     const result = await Almacen.destroy({ where: { id } });
-    return !result ? res.status(404).json({ msj: 'Nada Para mostrar' }) : res.status(204).json({ msg: 'Dato Eliminado con Exito' });
+
+    if (!result) {
+        return res.status(404).json({ msg: 'Nada Para mostrar' });
+    } 
+    console.log(res.json({ msg: 'Dato Eliminado con Éxito' }))
+    return res.json({ msg: 'Dato Eliminado con Éxito' });
 });
 
 module.exports = {

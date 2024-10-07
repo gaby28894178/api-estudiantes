@@ -2,15 +2,15 @@ const { getAll, getOne, create, update, destroy } = require('../controllers/prod
 
 const express = require('express');
 
-const userRouter = express.Router();
+const productosRouter = express.Router();
 
-userRouter.route('/')
+productosRouter.route('/')
     .get(getAll)
     .post(create);
 
-userRouter.route('/:id')
+productosRouter.route('/:id')
     .get(getOne)
     .delete(destroy)
     .put(update);
 
-module.exports = userRouter;
+module.exports = productosRouter;
